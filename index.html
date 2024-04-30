@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ang bang chok chang game</title>
+    <!-- Tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="h-screen flex justify-center items-center bg-gradient-to-r from-cyan-500 to-blue-500">
+    <div class="relative shadow-xl">
+        <!-- Game Board -->
+        <div class="bg-gray-700 grid grid-rows-5 grid-cols-5">
+            <!-- Row 1 -->
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px]"></div>
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px]"></div>
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px] relative flex justify-center">
+                <div class="bg-black w-[1px] h-full scale-[1.4] absolute rotate-45"></div>
+                <div class="bg-black w-[1px] h-full scale-[1.4] absolute rotate-[-45deg]"></div>
+            </div>
+            <!-- <div class="bg-gray-100 w-[100px] h-[100px]"></div> -->
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px] flex justify-center items-center">
+                <svg class="w-6 opacity-60 rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M32 448c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c53 0 96-43 96-96l0-306.7 73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3 160 416c0 17.7-14.3 32-32 32l-96 0z"/></svg>
+            </div>
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px]"></div>
+            <!-- Row 2 -->
+            <!-- <div class="bg-gray-100 w-[100px] h-[100px]"></div> -->
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px] flex justify-center items-center">
+                <svg class="w-6 opacity-60 rotate-90" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M32 448c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c53 0 96-43 96-96l0-306.7 73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3 160 416c0 17.7-14.3 32-32 32l-96 0z"/></svg>
+            </div>
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px]"></div>
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px]"></div>
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px]"></div>
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px]"></div>
+            <!-- Row 3 -->
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px] relative flex justify-center">
+                <div class="bg-black w-[1px] h-full scale-[1.4] absolute rotate-45"></div>
+                <div class="bg-black w-[1px] h-full scale-[1.4] absolute rotate-[-45deg]"></div>
+            </div>
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px]"></div>
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px] relative flex justify-center">
+                <div class="bg-black w-[1px] h-full scale-[1.4] absolute rotate-45"></div>
+                <div class="bg-black w-[1px] h-full scale-[1.4] absolute rotate-[-45deg]"></div>
+            </div>
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px]"></div>
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px] relative flex justify-center">
+                <div class="bg-black w-[1px] h-full scale-[1.4] absolute rotate-45"></div>
+                <div class="bg-black w-[1px] h-full scale-[1.4] absolute rotate-[-45deg]"></div>
+            </div>
+            <!-- Row 4 -->
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px]"></div>
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px]"></div>
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px]"></div>
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px]"></div>
+            <!-- <div class="bg-gray-100 w-[100px] h-[100px]"></div> -->
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px] flex justify-center items-center">
+                <svg class="w-6 opacity-60 rotate-[-90deg]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M32 448c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c53 0 96-43 96-96l0-306.7 73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3 160 416c0 17.7-14.3 32-32 32l-96 0z"/></svg>
+            </div>
+            <!-- Row 5 -->
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px]"></div>
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px] flex justify-center items-center">
+                <svg class="w-6 opacity-60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M32 448c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c53 0 96-43 96-96l0-306.7 73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3 160 416c0 17.7-14.3 32-32 32l-96 0z"/></svg>
+            </div>
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px] relative flex justify-center">
+                <div class="bg-black w-[1px] h-full scale-[1.4] absolute rotate-45"></div>
+                <div class="bg-black w-[1px] h-full scale-[1.4] absolute rotate-[-45deg]"></div>
+            </div>
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px]"></div>
+            <div class="bg-gray-100 w-[98px] h-[98px] m-[1px]"></div>
+        </div>
+
+        <!-- Players -->
+        <!-- Player 1 -->
+        <div class="all_red_players bg-red-500 cursor-pointer hover:scale-110 active:scale-100 w-5 h-5 rounded-full absolute bottom-[10px] left-[240px]"></div>
+        <div class="all_red_players bg-red-500 cursor-pointer hover:scale-110 active:scale-100 w-5 h-5 rounded-full absolute bottom-[70px] left-[240px]"></div>
+        <div class="all_red_players bg-red-500 cursor-pointer hover:scale-110 active:scale-100 w-5 h-5 rounded-full absolute bottom-[40px] left-[210px]"></div>
+        <div class="all_red_players bg-red-500 cursor-pointer hover:scale-110 active:scale-100 w-5 h-5 rounded-full absolute bottom-[40px] right-[210px]"></div>
+        <!-- Player 2 -->
+        <div class="all_blue_players bg-blue-500 cursor-pointer hover:scale-110 active:scale-100 w-5 h-5 rounded-full absolute right-[10px] bottom-[240px]"></div>
+        <div class="all_blue_players bg-blue-500 cursor-pointer hover:scale-110 active:scale-100 w-5 h-5 rounded-full absolute right-[70px] bottom-[240px]"></div>
+        <div class="all_blue_players bg-blue-500 cursor-pointer hover:scale-110 active:scale-100 w-5 h-5 rounded-full absolute right-[40px] bottom-[210px]"></div>
+        <div class="all_blue_players bg-blue-500 cursor-pointer hover:scale-110 active:scale-100 w-5 h-5 rounded-full absolute right-[40px] bottom-[270px]"></div>
+        <!-- Player 3 -->
+        <div class="all_yellow_players bg-yellow-500 cursor-pointer hover:scale-110 active:scale-100 w-5 h-5 rounded-full absolute left-[10px] bottom-[240px]"></div>
+        <div class="all_yellow_players bg-yellow-500 cursor-pointer hover:scale-110 active:scale-100 w-5 h-5 rounded-full absolute left-[70px] bottom-[240px]"></div>
+        <div class="all_yellow_players bg-yellow-500 cursor-pointer hover:scale-110 active:scale-100 w-5 h-5 rounded-full absolute left-[40px] bottom-[210px]"></div>
+        <div class="all_yellow_players bg-yellow-500 cursor-pointer hover:scale-110 active:scale-100 w-5 h-5 rounded-full absolute left-[40px] bottom-[270px]"></div>
+        <!-- Player 4 -->
+        <div class="all_green_players bg-green-500 cursor-pointer hover:scale-110 active:scale-100 w-5 h-5 rounded-full absolute left-[240px] bottom-[410px]"></div>
+        <div class="all_green_players bg-green-500 cursor-pointer hover:scale-110 active:scale-100 w-5 h-5 rounded-full absolute left-[240px] bottom-[470px]"></div>
+        <div class="all_green_players bg-green-500 cursor-pointer hover:scale-110 active:scale-100 w-5 h-5 rounded-full absolute left-[210px] bottom-[440px]"></div>
+        <div class="all_green_players bg-green-500 cursor-pointer hover:scale-110 active:scale-100 w-5 h-5 rounded-full absolute left-[270px] bottom-[440px]"></div>
+
+        <!-- Player chance -->
+        <div class="all_player_chance_box bg-gray-200 w-28 h-28 rounded-lg cursor-pointer bottom-0 left-[-170px] absolute grid grid-rows-2 grid-cols-2">
+            <!-- coin 1 -->
+            <div class="coin coin_1 flex justify-center items-center">
+                <div class="absolute bg-gray-400 w-7 h-7 black_side rounded-full"></div>
+                <div class="absolute bg-white w-7 h-7 white_side rounded-full"></div>
+            </div>
+            <!-- coin 2 -->
+            <div class="coin coin_2 flex justify-center items-center">
+                <div class="absolute bg-gray-400 w-7 h-7 black_side rounded-full"></div>
+                <div class="absolute bg-white w-7 h-7 white_side rounded-full"></div>
+            </div>
+            <!-- coin 3 -->
+            <div class="coin coin_3 flex justify-center items-center">
+                <div class="absolute bg-gray-400 w-7 h-7 black_side rounded-full"></div>
+                <div class="absolute bg-white w-7 h-7 white_side rounded-full"></div>
+            </div>
+            <!-- coin 4 -->
+            <div class="coin coin_4 flex justify-center items-center">
+                <div class="absolute bg-gray-400 w-7 h-7 black_side rounded-full"></div>
+                <div class="absolute bg-white w-7 h-7 white_side rounded-full"></div>
+            </div>
+        </div>
+        <div class="all_player_chance_box bg-gray-200 w-28 h-28 rounded-lg cursor-pointer top-0 left-[-170px] absolute"></div>
+        <div class="all_player_chance_box bg-gray-200 w-28 h-28 rounded-lg cursor-pointer top-0 right-[-170px] absolute"></div>
+        <div class="all_player_chance_box bg-gray-200 w-28 h-28 rounded-lg cursor-pointer bottom-0 right-[-170px] absolute"></div>
+
+    </div>
+    <!-- Player turn -->
+    <!-- <div class="absolute z-10  bg-gray-200 bg-opacity-50 w-52 h-52">
+        
+    </div> -->
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
