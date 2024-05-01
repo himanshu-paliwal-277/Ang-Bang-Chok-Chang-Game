@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ang bang chok chang game</title>
+    <title>Ang Bang Chok Chang Game</title>
     <!-- Tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="h-screen flex justify-center items-center bg-gradient-to-r from-cyan-500 to-blue-500">
+<body class="h-screen flex justify-center items-center bg-gradient-to-r from-sky-500 to-indigo-500">
     <div class="relative shadow-xl">
         <!-- Game Board -->
         <div class="bg-gray-700 grid grid-rows-5 grid-cols-5">
@@ -94,7 +94,7 @@
         <div class="all_green_players bg-green-500 cursor-pointer hover:scale-110 active:scale-100 w-5 h-5 rounded-full absolute left-[270px] bottom-[440px]"></div>
 
         <!-- Player chance -->
-        <div class="all_player_chance_box bg-gray-200 w-28 h-28 rounded-lg cursor-pointer bottom-0 left-[-170px] absolute grid grid-rows-2 grid-cols-2">
+        <div class="all_player_chance_box bg-opacity-90 border-2 border-red-500 bg-gray-200 w-28 h-28 rounded-lg cursor-pointer bottom-0 left-[-170px] absolute grid grid-rows-2 grid-cols-2">
             <!-- coin 1 -->
             <div class="coin coin_1 flex justify-center items-center">
                 <div class="absolute bg-gray-400 w-7 h-7 black_side rounded-full"></div>
@@ -116,9 +116,9 @@
                 <div class="absolute bg-white w-7 h-7 white_side rounded-full"></div>
             </div>
         </div>
-        <div class="all_player_chance_box bg-gray-200 w-28 h-28 rounded-lg cursor-pointer top-0 left-[-170px] absolute"></div>
-        <div class="all_player_chance_box bg-gray-200 w-28 h-28 rounded-lg cursor-pointer top-0 right-[-170px] absolute"></div>
-        <div class="all_player_chance_box bg-gray-200 w-28 h-28 rounded-lg cursor-pointer bottom-0 right-[-170px] absolute"></div>
+        <div class="all_player_chance_box bg-opacity-90 border-2 border-yellow-500 bg-gray-200 w-28 h-28 rounded-lg cursor-pointer top-0 left-[-170px] absolute grid grid-rows-2 grid-cols-2"></div>
+        <div class="all_player_chance_box bg-opacity-90 border-2 border-green-500 bg-gray-200 w-28 h-28 rounded-lg cursor-pointer top-0 right-[-170px] absolute grid grid-rows-2 grid-cols-2"></div>
+        <div class="all_player_chance_box bg-opacity-90 border-2 border-blue-500 bg-gray-200 w-28 h-28 rounded-lg cursor-pointer bottom-0 right-[-170px] absolute grid grid-rows-2 grid-cols-2"></div>
 
     </div>
     <!-- Player turn -->

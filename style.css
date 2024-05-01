@@ -2,12 +2,14 @@
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   /* animation: flip_to_white_side 2s infinite; */
+  animation-fill-mode: forwards;
 }
 
 .black_side,
 .white_side {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  transform: rotateX(0deg);
 }
 
 .white_side {

@@ -11,6 +11,12 @@ let coin_2 = document.querySelector(".coin_2");
 let coin_3 = document.querySelector(".coin_3");
 let coin_4 = document.querySelector(".coin_4");
 
+// Number getting by flipping coins
+let currently_getting_number = 0;
+
+// player chance
+let player_chance = 1;
+
 // Red player path
 let red_players_path = {
     0: [240, 10],
@@ -139,76 +145,253 @@ let player_position = {
 // Red player moves when clicked
 all_red_players.forEach((red_player, index) => {
     red_player.addEventListener("click", () => {
-        let current_position = player_position["red"][index];
-        let intervalId = setInterval(() => {
-            player_position["red"][index] = current_position;
-            console.log(player_position["red"]);
-            current_position++;
-            if(current_position > 24) {
-                clearInterval(intervalId);
+        if(player_chance === 1) {
+            let current_position = player_position["red"][index];
+            let previous_position = current_position;
+            let intervalId = setInterval(() => {
+                player_position["red"][index] = current_position;
+                current_position++;
+                if(current_position > previous_position + currently_getting_number) {
+                    clearInterval(intervalId);
+                    if(currently_getting_number !== 4 && currently_getting_number !== 8) {
+                    all_player_chance_box[0].innerHTML = "";
+                    setTimeout(() => {
+                        all_player_chance_box[3].innerHTML = `
+                    <div class="coin coin_1 flex justify-center items-center">
+                        <div class="absolute bg-gray-400 w-7 h-7 black_side rounded-full"></div>
+                        <div class="absolute bg-white w-7 h-7 white_side rounded-full"></div>
+                    </div>
+                    <div class="coin coin_2 flex justify-center items-center">
+                        <div class="absolute bg-gray-400 w-7 h-7 black_side rounded-full"></div>
+                        <div class="absolute bg-white w-7 h-7 white_side rounded-full"></div>
+                    </div>
+                    <div class="coin coin_3 flex justify-center items-center">
+                        <div class="absolute bg-gray-400 w-7 h-7 black_side rounded-full"></div>
+                        <div class="absolute bg-white w-7 h-7 white_side rounded-full"></div>
+                    </div>
+                    <div class="coin coin_4 flex justify-center items-center">
+                        <div class="absolute bg-gray-400 w-7 h-7 black_side rounded-full"></div>
+                        <div class="absolute bg-white w-7 h-7 white_side rounded-full"></div>
+                    </div>`;
+                    coin_1 = document.querySelector(".coin_1");
+                    coin_2 = document.querySelector(".coin_2");
+                    coin_3 = document.querySelector(".coin_3");
+                    coin_4 = document.querySelector(".coin_4");
+                    }, 200);
+                    }
+                }
+                else {
+                    red_player.style.left = `${red_players_path[current_position][0]}px`;
+                    red_player.style.bottom = `${red_players_path[current_position][1]}px`;
+                }
+            }, 300);
+            if(currently_getting_number !== 4 && currently_getting_number !== 8) {
+                player_chance++;
             }
-            red_player.style.left = `${red_players_path[current_position][0]}px`;
-            red_player.style.bottom = `${red_players_path[current_position][1]}px`;
-        }, 400);
+        }
     })
 })
 
-// Red player moves when clicked
+// Blue player moves when clicked
 all_blue_players.forEach((blue_player, index) => {
     blue_player.addEventListener("click", () => {
-        let current_position = player_position["blue"][index];
-        let intervalId = setInterval(() => {
-            player_position["blue"][index] = current_position;
-            console.log(player_position["blue"]);
-            current_position++;
-            if(current_position > 24) {
-                clearInterval(intervalId);
+        if(player_chance === 2) {
+            let current_position = player_position["blue"][index];
+            let previous_position = current_position;
+            let intervalId = setInterval(() => {
+                player_position["blue"][index] = current_position;
+                current_position++;
+                if(current_position > previous_position + currently_getting_number) {
+                    clearInterval(intervalId);
+                    if(currently_getting_number !== 4 && currently_getting_number !== 8) {
+                        all_player_chance_box[3].innerHTML = "";
+                    setTimeout(() => {
+                        all_player_chance_box[2].innerHTML = `
+                    <div class="coin coin_1 flex justify-center items-center">
+                        <div class="absolute bg-gray-400 w-7 h-7 black_side rounded-full"></div>
+                        <div class="absolute bg-white w-7 h-7 white_side rounded-full"></div>
+                    </div>
+                    <div class="coin coin_2 flex justify-center items-center">
+                        <div class="absolute bg-gray-400 w-7 h-7 black_side rounded-full"></div>
+                        <div class="absolute bg-white w-7 h-7 white_side rounded-full"></div>
+                    </div>
+                    <div class="coin coin_3 flex justify-center items-center">
+                        <div class="absolute bg-gray-400 w-7 h-7 black_side rounded-full"></div>
+                        <div class="absolute bg-white w-7 h-7 white_side rounded-full"></div>
+                    </div>
+                    <div class="coin coin_4 flex justify-center items-center">
+                        <div class="absolute bg-gray-400 w-7 h-7 black_side rounded-full"></div>
+                        <div class="absolute bg-white w-7 h-7 white_side rounded-full"></div>
+                    </div>`;
+                    coin_1 = document.querySelector(".coin_1");
+                    coin_2 = document.querySelector(".coin_2");
+                    coin_3 = document.querySelector(".coin_3");
+                    coin_4 = document.querySelector(".coin_4");
+                    }, 200);
+                    }
+                }
+                else {
+                    blue_player.style.left = `${blue_players_path[current_position][0]}px`;
+                    blue_player.style.bottom = `${blue_players_path[current_position][1]}px`;
+                }
+            }, 300);
+            if(currently_getting_number !== 4 && currently_getting_number !== 8) {
+                player_chance++;
             }
-            blue_player.style.left = `${blue_players_path[current_position][0]}px`;
-            blue_player.style.bottom = `${blue_players_path[current_position][1]}px`;
-        }, 400);
+        }
     })
 })
 
 // Green player moves when clicked
 all_green_players.forEach((green_player, index) => {
     green_player.addEventListener("click", () => {
-        let current_position = player_position["green"][index];
-        let intervalId = setInterval(() => {
-            player_position["green"][index] = current_position;
-            console.log(player_position["green"]);
-            current_position++;
-            if(current_position > 24) {
-                clearInterval(intervalId);
+        if(player_chance === 3) {
+            let current_position = player_position["green"][index];
+            let previous_position = current_position;
+            let intervalId = setInterval(() => {
+                player_position["green"][index] = current_position;
+                current_position++;
+                if(current_position > previous_position + currently_getting_number) {
+                    clearInterval(intervalId);
+                    if(currently_getting_number !== 4 && currently_getting_number !== 8) {
+                        all_player_chance_box[2].innerHTML = "";
+                    setTimeout(() => {
+                        all_player_chance_box[1].innerHTML = `
+                    <div class="coin coin_1 flex justify-center items-center">
+                        <div class="absolute bg-gray-400 w-7 h-7 black_side rounded-full"></div>
+                        <div class="absolute bg-white w-7 h-7 white_side rounded-full"></div>
+                    </div>
+                    <div class="coin coin_2 flex justify-center items-center">
+                        <div class="absolute bg-gray-400 w-7 h-7 black_side rounded-full"></div>
+                        <div class="absolute bg-white w-7 h-7 white_side rounded-full"></div>
+                    </div>
+                    <div class="coin coin_3 flex justify-center items-center">
+                        <div class="absolute bg-gray-400 w-7 h-7 black_side rounded-full"></div>
+                        <div class="absolute bg-white w-7 h-7 white_side rounded-full"></div>
+                    </div>
+                    <div class="coin coin_4 flex justify-center items-center">
+                        <div class="absolute bg-gray-400 w-7 h-7 black_side rounded-full"></div>
+                        <div class="absolute bg-white w-7 h-7 white_side rounded-full"></div>
+                    </div>`;
+                    coin_1 = document.querySelector(".coin_1");
+                    coin_2 = document.querySelector(".coin_2");
+                    coin_3 = document.querySelector(".coin_3");
+                    coin_4 = document.querySelector(".coin_4");
+                    }, 200);
+                    }
+                }
+                else {
+                    green_player.style.left = `${green_players_path[current_position][0]}px`;
+                    green_player.style.bottom = `${green_players_path[current_position][1]}px`;
+                }
+            }, 300);
+            if(currently_getting_number !== 4 && currently_getting_number !== 8) {
+                player_chance++;
             }
-            green_player.style.left = `${green_players_path[current_position][0]}px`;
-            green_player.style.bottom = `${green_players_path[current_position][1]}px`;
-        }, 400);
+        }
     })
 })
 
 // Yellow player moves when clicked
 all_yellow_players.forEach((yellow_player, index) => {
     yellow_player.addEventListener("click", () => {
-        let current_position = player_position["yellow"][index];
-        let intervalId = setInterval(() => {
-            player_position["yellow"][index] = current_position;
-            console.log(player_position["yellow"]);
-            current_position++;
-            if(current_position > 24) {
-                clearInterval(intervalId);
+        if(player_chance === 4) {
+            let current_position = player_position["yellow"][index];
+            let previous_position = current_position;
+            let intervalId = setInterval(() => {
+                player_position["yellow"][index] = current_position;
+                current_position++;
+                if(current_position > previous_position + currently_getting_number) {
+                    clearInterval(intervalId);
+                    if(currently_getting_number !== 4 && currently_getting_number !== 8) {
+                        all_player_chance_box[1].innerHTML = "";
+                    setTimeout(() => {
+                        all_player_chance_box[0].innerHTML = `
+                    <div class="coin coin_1 flex justify-center items-center">
+                        <div class="absolute bg-gray-400 w-7 h-7 black_side rounded-full"></div>
+                        <div class="absolute bg-white w-7 h-7 white_side rounded-full"></div>
+                    </div>
+                    <div class="coin coin_2 flex justify-center items-center">
+                        <div class="absolute bg-gray-400 w-7 h-7 black_side rounded-full"></div>
+                        <div class="absolute bg-white w-7 h-7 white_side rounded-full"></div>
+                    </div>
+                    <div class="coin coin_3 flex justify-center items-center">
+                        <div class="absolute bg-gray-400 w-7 h-7 black_side rounded-full"></div>
+                        <div class="absolute bg-white w-7 h-7 white_side rounded-full"></div>
+                    </div>
+                    <div class="coin coin_4 flex justify-center items-center">
+                        <div class="absolute bg-gray-400 w-7 h-7 black_side rounded-full"></div>
+                        <div class="absolute bg-white w-7 h-7 white_side rounded-full"></div>
+                    </div>`;
+                    coin_1 = document.querySelector(".coin_1");
+                    coin_2 = document.querySelector(".coin_2");
+                    coin_3 = document.querySelector(".coin_3");
+                    coin_4 = document.querySelector(".coin_4");
+                    }, 200);
+                    }
+                }
+                else {
+                    yellow_player.style.left = `${yellow_players_path[current_position][0]}px`;
+                    yellow_player.style.bottom = `${yellow_players_path[current_position][1]}px`;
+                }
+            }, 300);
+            if(currently_getting_number !== 4 && currently_getting_number !== 8) {
+                player_chance = 1;
             }
-            yellow_player.style.left = `${yellow_players_path[current_position][0]}px`;
-            yellow_player.style.bottom = `${yellow_players_path[current_position][1]}px`;
-        }, 400);
+        }
     })
 })
 
 // Changing the player chance
-all_player_chance_box[0].addEventListener("click", () => {
-    let coin_1_random_no = Math.rendom();
-    coin_1.style.animation = `flip_to_white_side 2s`
-    coin_2.style.animation = `flip_to_white_side 2s`
-    coin_3.style.animation = `flip_to_white_side 2s`
-    coin_4.style.animation = `flip_to_white_side 2s`
+all_player_chance_box.forEach((player_chance_box) => {
+    player_chance_box.addEventListener("click", () => {
+        coin_1.style.animation = `none`;
+        coin_2.style.animation = `none`;
+        coin_3.style.animation = `none`;
+        coin_4.style.animation = `none`;
+        // Coins toss logic
+        let coin_1_random_no = Math.floor(Math.random()*2);
+        let coin_2_random_no = Math.floor(Math.random()*2);
+        let coin_3_random_no = Math.floor(Math.random()*2);
+        let coin_4_random_no = Math.floor(Math.random()*2);
+        setTimeout(() => {
+            // Coin 1 randomly toss
+        if(coin_1_random_no === 1) {
+            coin_1.style.animation = `flip_to_white_side 2s forwards linear`;
+        }
+        else {
+            coin_1.style.animation = `flip_to_black_side 2s forwards linear`;
+        }
+        // Coin 2 randomly toss
+        if(coin_2_random_no === 1) {
+            coin_2.style.animation = `flip_to_white_side 2s forwards linear`;
+        }
+        else {
+            coin_2.style.animation = `flip_to_black_side 2s forwards linear`;
+        }
+        // Coin 3 randomly toss
+        if(coin_3_random_no === 1) {
+            coin_3.style.animation = `flip_to_white_side 2s forwards linear`;
+        }
+        else {
+            coin_3.style.animation = `flip_to_black_side 2s forwards linear`;
+        }
+        // Coin 4 randomly toss
+        if(coin_4_random_no === 1) {
+            coin_4.style.animation = `flip_to_white_side 2s forwards linear`;
+        }
+        else {
+            coin_4.style.animation = `flip_to_black_side 2s forwards linear`;
+        }
+        }, 100);
+        currently_getting_number = 0;
+        if(coin_1_random_no === 0 && coin_2_random_no === 0 
+            && coin_3_random_no === 0 && coin_4_random_no === 0) {
+                currently_getting_number = 8;
+            }
+            else {
+                currently_getting_number = coin_1_random_no + coin_2_random_no + coin_3_random_no + coin_4_random_no;
+            }
+            console.log("Current Number = ", currently_getting_number);
+    })
 })
