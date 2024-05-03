@@ -39,3 +39,21 @@
     transform: rotateX(4500deg) scale(1);
   }
 }
+
+.all_red_players, .all_blue_players, .all_green_players, .all_yellow_players {
+  /* animation: can_move 2s infinite linear; */
+  box-sizing: content-box;
+}
+
+@keyframes can_move {
+  0% {
+    border: 2px dashed black;
+    transform: rotate(0deg);
+    z-index: 10;
+  }
+  100% {
+    border: 2px dashed black;
+    transform: rotate(360deg);
+    z-index: 10;
+  }
+}
