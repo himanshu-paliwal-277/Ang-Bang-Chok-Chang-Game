@@ -160,6 +160,7 @@ all_red_players.forEach((red_player, index) => {
         if (current_position > previous_position + currently_getting_number) {
           clearInterval(intervalId);
           killing_player_chance = check_if_red_player_eat_some_other_player(current_position - 1);
+          console.log("Player chance = ", player_chance);
           console.log("killing_player_chance = ", killing_player_chance);
           if (
             currently_getting_number !== 4 &&
@@ -223,16 +224,38 @@ all_red_players.forEach((red_player, index) => {
 });
 
 // Function to check if red player eat some other player {This function is working}
-function check_if_red_player_eat_some_other_player(
-  current_position_of_red_player
-) {
+function check_if_red_player_eat_some_other_player(current_position_of_red_player) {
   let is_killed = false;
+  // Is red kill blue player
   player_position["blue"].forEach((Blue_player_position, index) => {
     if (Blue_player_position === current_position_of_red_player - 4 && current_position_of_red_player !== 4 && current_position_of_red_player !== 8 && current_position_of_red_player !== 12) {
       player_death_sound.play();
-      Blue_player_position = 0;
+      player_position["blue"][index] = 0;
       all_blue_players[index].style.left = `${blue_players_path[0][0]}px`;
       all_blue_players[index].style.bottom = `${blue_players_path[0][1]}px`;
+      player_chance = 1;
+      is_killed = true;
+    }
+  });
+  // Is red kill green player - {not working !}
+  player_position["green"].forEach((Green_player_position, index) => {
+    if (Green_player_position === current_position_of_red_player - 4 && current_position_of_red_player !== 4 && current_position_of_red_player !== 8 && current_position_of_red_player !== 12) {
+      player_death_sound.play();
+      player_position["green"][index] = 0;
+      all_green_players[index].style.left = `${green_players_path[0][0]}px`;
+      all_green_players[index].style.bottom = `${green_players_path[0][1]}px`;
+      player_chance = 1;
+      is_killed = true;
+    }
+  });
+  // Is red kill yellow player
+  player_position["yellow"].forEach((Yellow_player_position, index) => {
+    if (Yellow_player_position === current_position_of_red_player - 4 && current_position_of_red_player !== 4 && current_position_of_red_player !== 8 && current_position_of_red_player !== 12) {
+      player_death_sound.play();
+      player_position["yellow"][index] = 0;
+      all_yellow_players[index].style.left = `${yellow_players_path[0][0]}px`;
+      all_yellow_players[index].style.bottom = `${yellow_players_path[0][1]}px`;
+      player_chance = 1;
       is_killed = true;
     }
   });
